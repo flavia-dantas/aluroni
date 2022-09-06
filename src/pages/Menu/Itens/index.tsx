@@ -39,6 +39,7 @@ export default function Itens(props: Props) {
   useEffect(() => {
     const newList = menu.filter(item => testaBusca(item.title) && testaFiltro(item.category.id))
     setList(order(newList));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, filter, ordination]);
 
   return (
