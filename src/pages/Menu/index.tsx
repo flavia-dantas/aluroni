@@ -3,12 +3,13 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 import InputSearch from "./InputSearch";
 import { useState } from "react";
 import Filters from "./Filters";
-import Order from "./Order";
+import Ordination from "./Ordination";
+import Itens from "./Itens";
 
 export default function Menu() {
   const [search, setSearch] = useState("");
   const [filter, SetFilter] = useState<number | null>(null);
-  const [order, setOrder] = useState("");
+  const [ordination, setOrdination] = useState("");
   return (
     <main>
       <nav className={styles.menu}>
@@ -24,8 +25,9 @@ export default function Menu() {
         <InputSearch search={search} setSearch={setSearch} />
         <div className={styles.menu__filters}>
           <Filters filter={filter} SetFilter={SetFilter} />
-          <Order order={order} setOrder={setOrder} />
+          <Ordination ordination={ordination} setOrdination={setOrdination} />
         </div>
+        <Itens search={search} filter={filter} ordination={ordination} />
       </section>
     </main>
   )
